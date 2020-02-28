@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Row, Col, Layout } from 'antd';
+import Sidebar from './components/Sidebar/sidebar';
+import Map from './components/Map/Map'
 import './App.css';
 
-function App() {
+
+export default function App() {
+
+  // Render map
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <Layout>
+      <Row>
+        <Col xs={24} sm={24} md={8} lg={6} xl={6}>
+          <Sidebar></Sidebar>
+        </Col>
+        <Col xs={24} sm={24} md={16} lg={18} xl={18}>
+          <Map></Map>
+        </Col>
+      </Row>
+    </Layout>
+
     </div>
   );
 }
-
-export default App;
