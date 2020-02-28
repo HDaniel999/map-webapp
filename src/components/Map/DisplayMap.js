@@ -19,7 +19,7 @@ export default function DisplayMap() {
     const [bounds, setBounds] = useState(null);
 
     // Load and format api data
-    const url = "http://localhost:8080/api/coordinate";
+    const url = "https://parcomap-api.herokuapp.com/api/coordinate";
     const {data, error} = useSwr(url, { fetcher });
     const places = data && !error ? data.coordinate : [];
     const result = places.map(place => place)
